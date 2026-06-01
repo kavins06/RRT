@@ -104,16 +104,15 @@
     var hasSource = v.currentSrc || v.getAttribute("src") || v.querySelector("source");
     if (!hasSource) return;
 
-    // On small screens or reduced motion: skip loading the video, rely on poster.
-    if (prefersReduced || window.innerWidth <= 760) {
+    // Respect reduced-motion: show the poster instead of autoplaying.
+    if (prefersReduced) {
       v.removeAttribute("autoplay");
       try { v.pause(); } catch (e) {}
-      // Drop sources so the poster shows and no bandwidth is spent.
       Array.prototype.slice.call(v.querySelectorAll("source")).forEach(function (s) { s.remove(); });
       v.load();
       return;
     }
-    // Ensure inline autoplay attributes (Safari/iOS friendliness).
+    // Play on all viewports (incl. mobile). Requires muted + playsinline for iOS/Android autoplay.
     v.muted = true;
     v.setAttribute("playsinline", "");
     var p = v.play && v.play();
