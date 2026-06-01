@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renaissance Realty Trust | Private Multifamily REIT</title>
+  <meta name="description" content="Renaissance Realty Trust is a private REIT acquiring well-located apartment communities and converting underused office buildings into homes, beginning in Greater Washington, D.C., and building toward a national portfolio." />
+  <meta name="theme-color" content="#13274D" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- Open Graph / social (drop assets/img/og-image.jpg in to enable a rich preview) -->
+  <meta property="og:title" content="Renaissance Realty Trust | Private Multifamily REIT" />
+  <meta property="og:description" content="A private REIT acquiring vintage apartment communities and converting underused office buildings into homes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/img/og-image.jpg" />
+
+  <!-- Fonts: graceful fallback to system fonts if offline -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- ============================ NAV ============================ -->
+  <header class="nav" id="top">
+    <a class="brand" href="#top" aria-label="Renaissance Realty Trust, home">
+      <img class="brand__mark" src="assets/img/RRT.jpg" alt="" />
+      <span>
+        <span class="brand__name">Renaissance Realty Trust</span>
+        <span class="brand__sub">Private Multifamily REIT</span>
+      </span>
+    </a>
+
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="primary-menu">
+        <li><a href="#firm">About</a></li>
+        <li><a href="#strategy">Strategy</a></li>
+        <li><a href="#upreit">UPREIT</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- ============================ HERO ============================ -->
+    <section class="hero" id="hero">
+      <div class="hero__media has-grain" data-parallax="0.18">
+        <!-- Hero footage: Senate / Washington, D.C. street timelapse (VideoVault stock,
+             supplied by client). Compressed to a muted ~11s loop, audio stripped.
+             To swap it, replace assets/video/hero.mp4 + assets/img/hero-poster.jpg (see README). -->
+        <video data-bg autoplay muted loop playsinline preload="auto"
+               poster="assets/img/hero-poster.jpg">
+          <source src="assets/video/hero.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="hero__scrim" aria-hidden="true"></div>
+
+      <div class="hero__skyline" aria-hidden="true">
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+          <g fill="#09142E">
+            <!-- left cluster -->
+            <rect x="0" y="208" width="92" height="112"/>
+            <rect x="84" y="176" width="72" height="144"/>
+            <rect x="150" y="232" width="62" height="88"/>
+            <rect x="206" y="158" width="82" height="162"/>
+            <rect x="278" y="214" width="40" height="106"/>
+            <!-- Capitol-style domed building -->
+            <rect x="300" y="206" width="186" height="114"/>
+            <path d="M335 206 A58 58 0 0 1 451 206 Z"/>
+            <rect x="389" y="120" width="8" height="32"/>
+            <circle cx="393" cy="116" r="6"/>
+            <!-- mid cluster -->
+            <rect x="500" y="190" width="70" height="130"/>
+            <rect x="566" y="222" width="56" height="98"/>
+            <rect x="622" y="198" width="58" height="122"/>
+            <!-- Washington Monument obelisk -->
+            <rect x="704" y="74" width="26" height="246"/>
+            <path d="M704 74 L717 44 L730 74 Z"/>
+            <!-- right of monument -->
+            <rect x="762" y="176" width="80" height="144"/>
+            <rect x="844" y="212" width="60" height="108"/>
+            <rect x="904" y="150" width="92" height="170"/>
+            <rect x="998" y="196" width="70" height="124"/>
+            <rect x="1066" y="170" width="100" height="150"/>
+            <rect x="1160" y="216" width="70" height="104"/>
+            <rect x="1226" y="140" width="92" height="180"/>
+            <rect x="1310" y="200" width="72" height="120"/>
+            <rect x="1374" y="232" width="66" height="88"/>
+          </g>
+          <!-- dusk-lit windows -->
+          <g fill="#C7A458">
+            <rect class="win" x="222" y="180" width="6" height="9"/>
+            <rect class="win" x="246" y="200" width="6" height="9"/>
+            <rect class="win" x="222" y="216" width="6" height="9"/>
+            <rect class="win" x="104" y="196" width="6" height="9"/>
+            <rect class="win" x="128" y="220" width="6" height="9"/>
+            <rect class="win" x="520" y="210" width="6" height="9"/>
+            <rect class="win" x="544" y="234" width="6" height="9"/>
+            <rect class="win" x="924" y="172" width="6" height="9"/>
+            <rect class="win" x="950" y="196" width="6" height="9"/>
+            <rect class="win" x="924" y="220" width="6" height="9"/>
+            <rect class="win" x="1088" y="194" width="6" height="9"/>
+            <rect class="win" x="1114" y="220" width="6" height="9"/>
+            <rect class="win" x="1248" y="166" width="6" height="9"/>
+            <rect class="win" x="1274" y="192" width="6" height="9"/>
+            <rect class="win" x="1248" y="218" width="6" height="9"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="container hero__inner reveal">
+        <p class="eyebrow" style="color: var(--gold-bright);">Private Multifamily REIT</p>
+        <h1>Enduring value in multifamily real estate.</h1>
+        <p class="hero__sub">
+          Renaissance Realty Trust is a private REIT acquiring well-located apartment
+          communities and converting underused office buildings into homes, beginning in
+          Greater Washington, D.C., and building toward a national portfolio.
+        </p>
+        <div class="hero__cta">
+          <a class="btn" href="#contact">Get in touch <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="#strategy">Our strategy</a>
+        </div>
+      </div>
+
+      <a class="hero__scroll" href="#firm" aria-label="Scroll to content">
+        <span>Scroll</span>
+        <span class="line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ============================ THE FIRM ============================ -->
+    <section class="section" id="firm">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">The Firm</p>
+          <p class="lead">
+            Renaissance Realty Trust is a private real estate investment trust founded by
+            veteran REIT executives to acquire well-located apartment communities and give
+            underused office buildings new life as homes.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card__num">01</div>
+            <h3>Private REIT, UPREIT Structure</h3>
+            <p>A non-traded private REIT today, structured as an UPREIT so owners can contribute property on a tax-efficient basis.</p>
+          </article>
+          <article class="card reveal" style="--delay:120ms;">
+            <div class="card__num">02</div>
+            <h3>Multifamily &amp; Conversions</h3>
+            <p>Two complementary strategies: acquiring vintage apartment communities and converting underused office buildings to residential.</p>
+          </article>
+          <article class="card reveal" style="--delay:240ms;">
+            <div class="card__num">03</div>
+            <h3>D.C. Region → National</h3>
+            <p>Beginning in Greater Washington, D.C. (where our team has operated for decades), with a path toward a national portfolio.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ STRATEGY ============================ -->
+    <section class="section section--forest" id="strategy">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Investment Strategy</p>
+          <h2>Two ways we create value.</h2>
+        </div>
+
+        <div class="pillars">
+          <article class="pillar reveal">
+            <p class="pillar__tag">Strategy One</p>
+            <h3>Multifamily Acquisitions</h3>
+            <p>We acquire well-located, vintage apartment communities with durable occupancy and long-term private ownership.</p>
+            <ul>
+              <li>Well-located, vintage apartment buildings</li>
+              <li>Typically 97–98% leased</li>
+              <li>Long held by individual owners</li>
+              <li>Tax basis depreciated toward zero</li>
+              <li>Acquired tax-efficiently via UPREIT</li>
+            </ul>
+          </article>
+
+          <article class="pillar reveal" style="--delay:140ms;">
+            <p class="pillar__tag">Strategy Two</p>
+            <h3>Office-to-Residential Conversions</h3>
+            <p>We target well-located, largely vacant office buildings available at an attractive basis and reposition them as residential.</p>
+            <ul>
+              <li>Underused, well-located office assets</li>
+              <li>Attractive acquisition basis</li>
+              <li>Strong, durable residential demand</li>
+              <li>Adaptive reuse: new life for buildings</li>
+              <li>The idea behind our name: renewal</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ UPREIT ============================ -->
+    <section class="section" id="upreit">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">The UPREIT Advantage</p>
+          <h2>A better path for long-term owners.</h2>
+          <p class="lead" style="margin-top:1.2rem;">
+            Many of the finest apartment buildings are owned by individuals who have held them
+            for decades. Their tax basis has depreciated toward zero, so a cash sale triggers a
+            substantial tax bill. The UPREIT structure offers a better path.
+          </p>
+        </div>
+      </div>
+
+      <div class="section--forest" style="padding-block: clamp(3rem,6vw,5.5rem);">
+        <div class="container">
+          <div class="steps">
+            <div class="step reveal">
+              <h3>Contribute</h3>
+              <p>Owners contribute appreciated property into our operating partnership instead of selling it for cash.</p>
+            </div>
+            <div class="step reveal" style="--delay:140ms;">
+              <h3>Receive OP Units</h3>
+              <p>In exchange they receive operating-partnership (OP) units rather than a taxable cash payment.</p>
+            </div>
+            <div class="step reveal" style="--delay:280ms;">
+              <h3>Defer &amp; Diversify</h3>
+              <p>Capital-gains tax is deferred, and a single concentrated asset becomes a stake in a diversified, professionally managed portfolio.</p>
+            </div>
+          </div>
+          <p class="reveal" style="margin-top:2.6rem; color:rgba(244,239,230,.78); max-width:760px;">
+            Renaissance's founders bring decades of UPREIT experience, including landmark
+            acquisitions executed using this very structure across some of the country's most
+            recognized real estate portfolios.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ MARKETS ============================ -->
+    <section class="section section--cream-deep" id="markets">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Where We Invest</p>
+          <h2>Rooted in Washington. Built for the nation.</h2>
+        </div>
+
+        <div class="markets">
+          <div class="market-group reveal">
+            <h3>Today: Greater Washington, D.C.</h3>
+            <ul class="market-list">
+              <li><span class="dot" aria-hidden="true"></span>Washington, D.C.</li>
+              <li><span class="dot" aria-hidden="true"></span>Northern Virginia</li>
+              <li><span class="dot" aria-hidden="true"></span>Suburban Maryland</li>
+            </ul>
+          </div>
+          <div class="market-group reveal" style="--delay:160ms;">
+            <h3>Exploring: Nationally</h3>
+            <ul class="market-list market-list--muted">
+              <li><span class="dot" aria-hidden="true"></span>Boston</li>
+              <li><span class="dot" aria-hidden="true"></span>Florida</li>
+              <li><span class="dot" aria-hidden="true"></span>Texas</li>
+            </ul>
+            <p class="market-note">As the portfolio scales, Renaissance is evaluating acquisitions in select markets across the country.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ LEADERSHIP ============================ -->
+    <section class="section" id="leadership">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Leadership</p>
+          <h2>Decades of REIT leadership.</h2>
+          <blockquote class="lead" style="margin-top:1.4rem; border-left:2px solid var(--gold); padding-left:1.4rem; font-style:italic;">
+            "We make a good team because of our networks with Washington's longtime real estate
+            families: Jonathan knows one generation, and I know the one directly below it."
+            <cite style="display:block; font-style:normal; font-family:var(--sans); font-size:.85rem; letter-spacing:.04em; color:var(--muted); margin-top:.8rem;">Bobby Wilson, Co-Founder &amp; President</cite>
+          </blockquote>
+        </div>
+
+        <div class="leaders">
+
+          <article class="leader reveal">
+            <div class="leader__photo">
+              <img src="assets/img/morris.jpg" alt="Portrait of Jonathan Morris, Co-Founder and Chief Executive Officer" />
+            </div>
+            <div class="leader__body">
+              <p class="leader__role">Co-Founder &amp; Chief Executive Officer</p>
+              <h3>Jonathan Morris</h3>
+              <p>
+                Jonathan Morris has spent more than three decades as a senior executive across the
+                REIT industry. He served as Director of Acquisitions at Boston Properties (BXP) and
+                as Senior Vice President and Chief Investment Officer at Charles E. Smith Residential,
+                one of the earliest conversions of the modern REIT era, later merged into
+                Archstone-Smith.
+              </p>
+              <p>
+                He co-founded LMH Realty Group, a private-equity affiliate of Lerner Enterprises, led
+                capital markets as a Managing Director at JLL, and served as Chief Investment Officer
+                of Armada Hoffler Properties (NYSE: AHH). A longtime adjunct professor of REITs at
+                Georgetown University and the founder of REIT Academy, he is a nationally recognized
+                authority on the UPREIT structure.
+              </p>
+              <div class="tags">
+                <span class="tag">Boston Properties</span>
+                <span class="tag">Charles E. Smith Residential</span>
+                <span class="tag">JLL Capital Markets</span>
+                <span class="tag">Armada Hoffler (CIO)</span>
+                <span class="tag">Georgetown REIT Professor</span>
+                <span class="tag">REIT Academy</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="leader reveal">
+            <div class="leader__photo">
+              <img src="assets/img/wilson.jpg" alt="Portrait of Bobby Wilson, Co-Founder and President" />
+            </div>
+            <div class="leader__body">
+              <p class="leader__role">Co-Founder &amp; President</p>
+              <h3>Bobby Wilson</h3>
+              <p>
+                Bobby Wilson is a Washington, D.C.–based acquisitions and capital-markets professional.
+                He spent nearly eight years leading acquisitions at Moore &amp; Associates, following
+                capital-markets roles at Cushman &amp; Wakefield, where he structured debt and equity
+                for commercial real estate transactions across the D.C. region on behalf of
+                institutional and private investors.
+              </p>
+              <p>
+                He earned his master's in real estate finance from Georgetown University, where he
+                first studied under Jonathan Morris, and has built deep relationships with the
+                region's longtime property-owning families.
+              </p>
+              <div class="tags">
+                <span class="tag">Moore &amp; Associates</span>
+                <span class="tag">Cushman &amp; Wakefield</span>
+                <span class="tag">Georgetown MBA, Real Estate Finance</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ VISION ============================ -->
+    <section class="section section--forest" id="vision">
+      <div class="container vision">
+        <div class="section-head center reveal">
+          <p class="eyebrow">The Path Ahead</p>
+          <h2>From private REIT to public.</h2>
+          <p class="lead">
+            Renaissance Realty Trust launches as a non-traded private REIT. As the portfolio grows,
+            we intend to pursue a public listing through a regulatory offering: building, deal by
+            deal, toward a public REIT.
+          </p>
+        </div>
+        <div class="vision__meta reveal">
+          <div class="vision__stat"><span class="n">12–18 mo</span><span class="l">Targeted timeline toward a public offering</span></div>
+          <div class="vision__stat"><span class="n">30+ yrs</span><span class="l">Founder REIT leadership experience</span></div>
+          <div class="vision__stat"><span class="n">UPREIT</span><span class="l">Tax-efficient acquisition structure</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CONTACT ============================ -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="reveal">
+            <p class="eyebrow">Contact</p>
+            <h2>Let's start a conversation.</h2>
+            <p style="color:var(--muted); max-width:42ch; margin-top:1rem;">
+              Whether you own a well-located building and want to explore a tax-efficient
+              transaction, or you'd like to learn more about Renaissance Realty Trust, we'd
+              welcome the conversation.
+            </p>
+          </div>
+
+          <ul class="contact-list reveal" style="--delay:140ms;">
+            <li>
+              <div class="k">Email</div>
+              <a class="v" href="mailto:info@renaissancerealtytrust.com">info@renaissancerealtytrust.com</a>
+            </li>
+            <li>
+              <div class="k">Location</div>
+              <span class="v">Washington, D.C. Metro Area</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <a class="brand" href="#top">
+          <img class="brand__mark" src="assets/img/RRT.jpg" alt="" />
+          <span><span class="brand__name">Renaissance Realty Trust</span>
+          <span class="brand__sub">Private Multifamily REIT</span></span>
+        </a>
+        <ul class="footer__links">
+          <li><a href="#firm">About</a></li>
+          <li><a href="#strategy">Strategy</a></li>
+          <li><a href="#upreit">UPREIT</a></li>
+          <li><a href="#leadership">Leadership</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__legal">
+        <p>
+          This website is for informational purposes only and does not constitute an offer to sell,
+          or the solicitation of an offer to buy, any securities, nor shall there be any sale of
+          securities in any jurisdiction in which such an offer, solicitation, or sale would be
+          unlawful. Any offer to sell, or solicitation of an offer to buy, securities will be made
+          only by means of definitive offering documents, which describe the risks, fees, and
+          conflicts associated with such an investment.
+        </p>
+        <p>
+          Certain statements on this website are forward-looking and reflect current expectations
+          regarding future events, including the company's intention to pursue a public offering.
+          Such statements are subject to risks and uncertainties, and actual results may differ
+          materially. Past performance of the founders or their prior firms is not indicative of
+          future results.
+        </p>
+      </div>
+
+      <p class="footer__copy">© <span data-year>2026</span> Renaissance Realty Trust, Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

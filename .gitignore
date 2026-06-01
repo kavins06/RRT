@@ -1,0 +1,15 @@
+# Reference / source material — contains the founders' personal data
+# (personal emails, phone numbers, full LinkedIn bios). This repo is PUBLIC,
+# so these are kept out of version control. Delete this line only if you
+# intend to publish them.
+Founders/
+
+# Tooling artifacts
+.gstack/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
