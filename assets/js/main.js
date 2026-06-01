@@ -191,4 +191,26 @@
     // Static fallback content is already "2026"; only overwrite if Date is available.
     try { yearEl.textContent = String(new Date().getFullYear()); } catch (e) {}
   }
+
+  /* ---------- 9. Cookie consent ---------- */
+  var cookieBanner = document.getElementById("cookie-banner");
+  if (cookieBanner) {
+    var CONSENT_KEY = "rrt-cookie-consent";
+    var getConsent = function () { try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return null; } };
+    var setConsent = function (v) { try { localStorage.setItem(CONSENT_KEY, v); } catch (e) {} };
+
+    if (!getConsent()) {
+      // Show after a short beat so it doesn't fight the hero intro.
+      setTimeout(function () { cookieBanner.classList.add("is-visible"); }, 900);
+    }
+    cookieBanner.addEventListener("click", function (e) {
+      var btn = e.target.closest("[data-cookie]");
+      if (!btn) return;
+      setConsent(btn.getAttribute("data-cookie")); // "accepted" | "declined"
+      cookieBanner.classList.remove("is-visible");
+      // window.rrtConsent lets future analytics check the choice: e.g. if (window.rrtConsent === "accepted") {...}
+      window.rrtConsent = btn.getAttribute("data-cookie");
+    });
+    window.rrtConsent = getConsent();
+  }
 })();
