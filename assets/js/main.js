@@ -34,6 +34,12 @@
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") closeMenu();
     });
+    // Tap outside the nav (on the scrim / page) closes the menu.
+    document.addEventListener("click", function (e) {
+      if (document.body.classList.contains("menu-open") && !e.target.closest(".nav")) {
+        closeMenu();
+      }
+    });
   }
 
   /* ---------- 3. Scroll reveals ---------- */
