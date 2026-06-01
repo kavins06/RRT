@@ -650,7 +650,11 @@ body.menu-open .nav__toggle span { background: var(--cream); }
   .nav__toggle { display: flex; }
   .nav__links {
     position: fixed;
-    inset: 0 0 0 auto;
+    top: 0;
+    right: 0;
+    left: auto;
+    height: 100vh;            /* fallback */
+    height: 100dvh;           /* full viewport even if an ancestor (nav backdrop-filter) is a containing block */
     width: min(82vw, 340px);
     flex-direction: column;
     align-items: flex-start;
@@ -664,6 +668,8 @@ body.menu-open .nav__toggle span { background: var(--cream); }
     overflow-y: auto;
   }
   body.menu-open .nav__links { transform: translateX(0); }
+  /* remove the nav's backdrop-filter while open so it can't act as a containing block for the fixed panel */
+  body.menu-open .nav { -webkit-backdrop-filter: none; backdrop-filter: none; }
   body.menu-open { overflow: hidden; }
   /* tap-outside scrim */
   body.menu-open::after {
