@@ -41,6 +41,13 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Lenis smooth-scroll (active only when JS initializes it) */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-scrolling iframe { pointer-events: none; }
+
 body {
   margin: 0;
   font-family: var(--sans);
@@ -338,6 +345,35 @@ body.menu-open .nav__toggle span { background: var(--cream); }
   100% { transform: scaleY(1) translateY(46px); opacity: 0; }
 }
 
+/* Cinematic hero intro: eyebrow, headline lines, sub, CTAs rise in on load (pure CSS) */
+.hero h1 .hl { display: block; }
+.hero__inner > .eyebrow,
+.hero__inner h1 .hl,
+.hero__inner .hero__sub,
+.hero__inner .hero__cta {
+  opacity: 0;
+  animation: heroRise 1s var(--ease) forwards;
+}
+.hero__inner > .eyebrow          { animation-delay: .15s; }
+.hero__inner h1 .hl:nth-child(1) { animation-delay: .30s; }
+.hero__inner h1 .hl:nth-child(2) { animation-delay: .45s; }
+.hero__inner .hero__sub          { animation-delay: .65s; }
+.hero__inner .hero__cta          { animation-delay: .80s; }
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Slow Ken Burns drift behind the hero (composes with the parallax on the wrapper) */
+.hero__media video,
+.hero__media img {
+  animation: kenburns 30s ease-out forwards;
+}
+@keyframes kenburns {
+  from { transform: scale(1.0); }
+  to   { transform: scale(1.1); }
+}
+
 /* ============================================================
    GENERIC SECTION DECOR
    ============================================================ */
@@ -522,14 +558,37 @@ body.menu-open .nav__toggle span { background: var(--cream); }
 /* ============================================================
    MOTION - scroll reveals
    ============================================================ */
-.reveal {
+.js .reveal {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity .9s var(--ease), transform .9s var(--ease);
   transition-delay: var(--delay, 0ms);
   will-change: opacity, transform;
 }
-.reveal.is-visible { opacity: 1; transform: none; }
+.js .reveal.r-left  { transform: translateX(-44px); }
+.js .reveal.r-right { transform: translateX(44px); }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+
+/* The gold eyebrow rule "draws" in as its section enters */
+.js .reveal .eyebrow::before {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .8s var(--ease) .25s;
+}
+.js .reveal.is-visible .eyebrow::before { transform: scaleX(1); }
+
+/* Market rows + vision stats cascade after their group reveals */
+.js .market-group .market-list li {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .6s var(--ease), transform .6s var(--ease);
+}
+.js .market-group.is-visible .market-list li { opacity: 1; transform: none; }
+.js .market-group.is-visible .market-list li:nth-child(1) { transition-delay: .12s; }
+.js .market-group.is-visible .market-list li:nth-child(2) { transition-delay: .26s; }
+.js .market-group.is-visible .market-list li:nth-child(3) { transition-delay: .40s; }
+.vision__meta .vision__stat:nth-child(2) { --delay: 130ms; }
+.vision__meta .vision__stat:nth-child(3) { --delay: 260ms; }
 
 /* ============================================================
    RESPONSIVE
@@ -543,6 +602,9 @@ body.menu-open .nav__toggle span { background: var(--cream); }
   .leader { grid-template-columns: 1fr; }
   .leader__photo { max-width: 280px; }
   .contact-grid { grid-template-columns: 1fr; }
+  /* stacked layout: directional reveals fall back to a vertical rise (no sideways shift) */
+  .js .reveal.r-left, .js .reveal.r-right { transform: translateY(28px); }
+  .js .reveal.r-left.is-visible, .js .reveal.r-right.is-visible { transform: none; }
 }
 
 @media (max-width: 760px) {
@@ -617,7 +679,8 @@ body.menu-open .nav__toggle span { background: var(--cream); }
     animation-iteration-count: 1 !important;
     transition-duration: .001ms !important;
   }
-  .reveal { opacity: 1; transform: none; }
+  .js .reveal, .js .reveal.r-left, .js .reveal.r-right { opacity: 1; transform: none; }
+  .js .market-group .market-list li { opacity: 1; transform: none; }
   .hero__scroll .line { animation: none; }
 }
 

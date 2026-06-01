@@ -1,8 +1,9 @@
 # Renaissance Realty Trust - Website
 
 A lightweight, single-page marketing site for **Renaissance Realty Trust, Inc.**, a private
-multifamily REIT. Plain HTML / CSS / vanilla JavaScript - **no build step, no dependencies,
-no backend**. It opens in any browser and hosts on anything.
+multifamily REIT. Plain HTML / CSS / vanilla JavaScript - **no build step, no backend**, and a
+single small vendored library (Lenis, ~17 KB, for smooth momentum scrolling). It opens in any
+browser and hosts on anything.
 
 ## Preview locally
 

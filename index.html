@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.classList.add('js');</script>
   <title>Renaissance Realty Trust | Private Multifamily REIT</title>
   <meta name="description" content="Renaissance Realty Trust is a private REIT acquiring well-located apartment communities and converting underused office buildings into homes, beginning in Greater Washington, D.C., and building toward a national portfolio." />
   <meta name="theme-color" content="#13274D" />
@@ -116,9 +117,9 @@
         </svg>
       </div>
 
-      <div class="container hero__inner reveal">
+      <div class="container hero__inner">
         <p class="eyebrow" style="color: var(--gold-bright);">Private Multifamily REIT</p>
-        <h1>Enduring value in multifamily real estate.</h1>
+        <h1><span class="hl">Enduring value in</span><span class="hl">multifamily real estate.</span></h1>
         <p class="hero__sub">
           Renaissance Realty Trust is a private REIT acquiring well-located apartment
           communities and converting underused office buildings into homes, beginning in
@@ -290,11 +291,11 @@
 
         <div class="leaders">
 
-          <article class="leader reveal">
-            <div class="leader__photo">
+          <article class="leader">
+            <div class="leader__photo reveal r-left">
               <img src="assets/img/morris.jpg" alt="Portrait of Jonathan Morris, Co-Founder and Chief Executive Officer" />
             </div>
-            <div class="leader__body">
+            <div class="leader__body reveal r-right">
               <p class="leader__role">Co-Founder &amp; Chief Executive Officer</p>
               <h3>Jonathan Morris</h3>
               <p>
@@ -322,11 +323,11 @@
             </div>
           </article>
 
-          <article class="leader reveal">
-            <div class="leader__photo">
+          <article class="leader">
+            <div class="leader__photo reveal r-right">
               <img src="assets/img/wilson.jpg" alt="Portrait of Bobby Wilson, Co-Founder and President" />
             </div>
-            <div class="leader__body">
+            <div class="leader__body reveal r-left">
               <p class="leader__role">Co-Founder &amp; President</p>
               <h3>Bobby Wilson</h3>
               <p>
@@ -365,10 +366,10 @@
             deal, toward a public REIT.
           </p>
         </div>
-        <div class="vision__meta reveal">
-          <div class="vision__stat"><span class="n">12–18 mo</span><span class="l">Targeted timeline toward a public offering</span></div>
-          <div class="vision__stat"><span class="n">30+ yrs</span><span class="l">Founder REIT leadership experience</span></div>
-          <div class="vision__stat"><span class="n">UPREIT</span><span class="l">Tax-efficient acquisition structure</span></div>
+        <div class="vision__meta">
+          <div class="vision__stat reveal"><span class="n">12–18 mo</span><span class="l">Targeted timeline toward a public offering</span></div>
+          <div class="vision__stat reveal"><span class="n" data-count="30" data-count-suffix="+ yrs">30+ yrs</span><span class="l">Founder REIT leadership experience</span></div>
+          <div class="vision__stat reveal"><span class="n">UPREIT</span><span class="l">Tax-efficient acquisition structure</span></div>
         </div>
       </div>
     </section>
@@ -377,7 +378,7 @@
     <section class="section" id="contact">
       <div class="container">
         <div class="contact-grid">
-          <div class="reveal">
+          <div class="reveal r-left">
             <p class="eyebrow">Contact</p>
             <h2>Let's start a conversation.</h2>
             <p style="color:var(--muted); max-width:42ch; margin-top:1rem;">
@@ -387,7 +388,7 @@
             </p>
           </div>
 
-          <ul class="contact-list reveal" style="--delay:140ms;">
+          <ul class="contact-list reveal r-right" style="--delay:140ms;">
             <li>
               <div class="k">Email</div>
               <a class="v" href="mailto:info@renaissancerealtytrust.com">info@renaissancerealtytrust.com</a>
@@ -443,6 +444,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/lenis.min.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>

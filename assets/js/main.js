@@ -9,6 +9,15 @@
   var prefersReduced = window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* ---------- 0. Smooth momentum scroll (Lenis: desktop wheel, native touch) ---------- */
+  var lenis = null;
+  try {
+    if (!prefersReduced && typeof window.Lenis === "function") {
+      lenis = new window.Lenis({ lerp: 0.1, wheelMultiplier: 1, smoothWheel: true });
+      (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })(0);
+    }
+  } catch (e) { lenis = null; }
+
   /* ---------- 1. Sticky nav state ---------- */
   var nav = document.querySelector(".nav");
   function onScrollNav() {
@@ -22,11 +31,12 @@
   /* ---------- 2. Mobile menu toggle ---------- */
   var toggle = document.querySelector(".nav__toggle");
   var links = document.querySelector(".nav__links");
-  function closeMenu() { document.body.classList.remove("menu-open"); if (toggle) toggle.setAttribute("aria-expanded", "false"); }
+  function closeMenu() { document.body.classList.remove("menu-open"); if (toggle) toggle.setAttribute("aria-expanded", "false"); if (lenis) lenis.start(); }
   if (toggle && links) {
     toggle.addEventListener("click", function () {
       var open = document.body.classList.toggle("menu-open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      if (lenis) { if (open) lenis.stop(); else lenis.start(); }
     });
     links.addEventListener("click", function (e) {
       if (e.target.closest("a")) closeMenu();
@@ -41,6 +51,20 @@
       }
     });
   }
+
+  /* ---------- 2b. Smooth anchor navigation ---------- */
+  Array.prototype.slice.call(document.querySelectorAll('a[href^="#"]')).forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      var href = a.getAttribute("href");
+      if (!href || href.length < 2) return;
+      var target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      closeMenu();
+      if (lenis) lenis.scrollTo(target, { offset: -64 });
+      else target.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth" });
+    });
+  });
 
   /* ---------- 3. Scroll reveals ---------- */
   var revealEls = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
@@ -129,7 +153,39 @@
     }
   });
 
-  /* ---------- 7. Footer year ---------- */
+  /* ---------- 7. Count-up stats ---------- */
+  var counters = Array.prototype.slice.call(document.querySelectorAll("[data-count]"));
+  if (counters.length) {
+    var setFinal = function (el) {
+      el.textContent = (el.getAttribute("data-count-prefix") || "") +
+        el.getAttribute("data-count") + (el.getAttribute("data-count-suffix") || "");
+    };
+    if (prefersReduced || !("IntersectionObserver" in window)) {
+      counters.forEach(setFinal);
+    } else {
+      var countObs = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          obs.unobserve(entry.target);
+          var el = entry.target;
+          var target = parseFloat(el.getAttribute("data-count")) || 0;
+          var prefix = el.getAttribute("data-count-prefix") || "";
+          var suffix = el.getAttribute("data-count-suffix") || "";
+          var dur = 1300, startT = null;
+          (function step(ts) {
+            if (startT === null) startT = ts;
+            var p = Math.min((ts - startT) / dur, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = prefix + Math.round(target * eased) + suffix;
+            if (p < 1) requestAnimationFrame(step);
+          })(performance.now());
+        });
+      }, { threshold: 0.4 });
+      counters.forEach(function (c) { countObs.observe(c); });
+    }
+  }
+
+  /* ---------- 8. Footer year ---------- */
   var yearEl = document.querySelector("[data-year]");
   if (yearEl) {
     // Static fallback content is already "2026"; only overwrite if Date is available.
