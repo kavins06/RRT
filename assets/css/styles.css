@@ -583,6 +583,8 @@ body.menu-open .nav__toggle span { background: var(--cream); }
   .nav__links a:hover, .nav.scrolled .nav__links a:hover { color: var(--gold-bright); }
   .hero__inner { padding-block: 7.5rem 5rem; }
   .vision__meta { gap: 2rem 3rem; }
+  /* the scroll cue collides with the stacked CTA buttons on phones; not needed on touch */
+  .hero__scroll { display: none; }
 }
 
 /* Small phones */
