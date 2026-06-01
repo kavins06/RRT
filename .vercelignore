@@ -1,0 +1,6 @@
+# Keep these out of the deployed (public) site
+Founders/
+.gstack/
+.git
+# Unused source media (the site serves the optimized assets/video/hero.mp4)
+assets/video/VideoVault Stock Video_ Senate Washington DC view from street timelapse_1080p.mp4

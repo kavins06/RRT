@@ -6,6 +6,7 @@ Founders/
 
 # Tooling artifacts
 .gstack/
+.vercel/
 
 # OS / editor junk
 .DS_Store
